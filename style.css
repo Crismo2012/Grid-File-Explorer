@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+}
+
+/* TODO: Root */
+
+:root {
+    --color-1 : #e9e9f5;
+    --color-2 : #090911;
+    --bgc-nav : #090911;
+    --bgc-main: #e9e9f5;
+    --bgc-card: #cfd1e8;
+    --bgc-img : #a4a8d5;
+    --shadow-1: #7b7b7b;
+    --shadow-2: #a4a8d5;
+}
+
+.cont::-webkit-scrollbar {
+    opacity      : 100;
+    border-radius: 10px;
+    width        : 10px;
+}
+
+.cont::-webkit-scrollbar-button {
+    opacity      : 100;
+    border-radius: 10px;
+}
+
+.cont::-webkit-scrollbar-thumb {
+    background-color: var(--bgc-nav);
+    border-radius   : 10px;
+}
+
+.view-1 {
+    width           : calc(80vw);
+    height          : calc(100vh - 2em);
+    padding         : 2em 10% 0;
+    background-color: #ffffff00;
+    background-color: var(--bgc-main);
+
+    z-index : 100;
+    overflow: hidden;
+
+    /* box-shadow: inset var(--shadow-2) 0px 40px   50px 0; */
+}
+
+input {
+    display: none;
+}
+
+.label {
+    background-image : url(sources/moon-solid.svg);
+    background-repeat: no-repeat;
+    height           : 2em;
+    width            : 2em;
+    transition       : 0.5s;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - Dark  theme - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* TODO: Uso del tema oscuro */
+.toggle:checked~* {
+    --color-1 : #090911;
+    --color-2 : #000000;
+    --bgc-nav : #cfd1e8;
+    --bgc-main: #090911;
+    --bgc-card: #a4a8d5;
+    --bgc-img : #cfd1e8;
+    --shadow-1: #6d6d6d;
+    --shadow-2: #000000;
+
+    .label {
+        background-image : url(sources/sun-solid.svg);
+        background-repeat: no-repeat;
+        height           : 2em;
+        width            : 2em;
+    }
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+.navbar {
+    width           : 50em;
+    height          : 3em;
+    border-radius   : 10px;
+    background-color: var(--bgc-nav);
+    color           : var(--color);
+    margin          : 0 auto 2em;
+    box-shadow      : var(--shadow-color) 5px 5px 10px;
+    display         : flex;
+    justify-content : space-around;
+    align-items     : center;
+}
+
+h1 {
+    color: var(--color-1);
+}
+
+h4 {
+    font-weight: 100;
+    color      : var(--color-1);
+}
+
+h2,
+p {
+    color: var(--color-2);
+}
+
+.tabs {
+    display    : flex;
+    gap        : 1.5em;
+    font-weight: 100;
+}
+
+.icons {
+    display: flex;
+}
+
+.moon {
+    width : 1.8em;
+    height: 1.8em;
+}
+
+.cont {
+    width           : auto;
+    height          : 87%;
+    overflow-x      : hidden;
+    background-color: #00000000;
+    z-index: 100;
+}
+
+/* 
+.shadow {
+    opacity   : 100;
+    width     : 90%;
+    height    : 1px;
+    z-index   : 100;
+    margin    : auto;
+    box-shadow: var(--bgc-nav) 10px 10px 10px 10px;
+} */
+
+/* TODO: Aqui empieza el GRID */
+
+.container {
+    max-width: 60em;
+    margin   : 0 auto;
+
+    display              : grid;
+    grid-template-columns: repeat(4, 15em);
+    grid-template-rows   : repeat(5, 11em);
+    row-gap              : 1em;
+    box-shadow           : inset var(--bgc-main) -10px 10px 10px;
+    padding-bottom       : 1em;
+
+    z-index: 100;
+}
+
+/* TODO: Aqui termina */
+
+.card {
+    width           : 14em;
+    height          : 10em;
+    margin          : 10px auto;
+    background-color: var(--bgc-card);
+    border-radius   : 10px;
+    box-shadow      : var(--shadow-1) 5px 5px 5px;
+    color           : var(--color-dark);
+
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    gap            : 10px;
+
+    transition: 0.15s;
+}
+
+.img {
+    width           : 90%;
+    height          : 50%;
+    border-radius   : 10px;
+    background-color: var(--bgc-img);
+
+    transition: 0.2s;
+}
+
+/* .img:active {
+    scale     : 1.8;
+    box-shadow: #00000066 0 0 4vh 3vh;
+    z-index   : 5000;
+} */
+
+.data {
+    width              : 90%;
+    height             : auto;
+    font-family        : "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style         : normal;
+}
+
+/* H O V E R S */
+
+.card:hover {
+    scale: 102%;
+}
+
+.card:active {
+    scale: 95%;
+}
